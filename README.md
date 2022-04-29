@@ -31,12 +31,32 @@
 
 ####  :white_check_mark: Server 
 
-
+##### Used technologies
+* Golang
+* GRPC
 
 ####  :white_check_mark: Client
 
 
+##### Used technologies
+* NodeJS
+* GRPC
+
 ####  :white_check_mark: Database
+
+The database used for this project is Mongodb due its easy to use and does not consume a lot of CPU / Memory resources.
+
+How to configurate a mongodb instance with docker
+
+```
+docker run --name mongodb -d -p 27017:27017 mongo
+```
+
+Start instance after shutdown
+```
+docker start <MONGODB_CONTAINER_ID>
+```
+
 
 
 ####  :white_check_mark: Docker
