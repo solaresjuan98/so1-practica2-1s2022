@@ -93,3 +93,47 @@ RabbitMQ is lightweight and easy to deploy on premises and in the cloud. It supp
 
 RabbitMQ runs on many operating systems and cloud environments, and provides a wide range of developer tools for most popular languages.
 </p>
+
+#### Configuration
+
+1. Create rabbit namespace 
+```
+kubectl create ns rabbits
+```
+   * Create The following files
+       
+       * rabbit-rbac.yaml
+       * rabbit-configmap.yaml
+       * rabbit-secret.yaml
+       * rabbit-statefulset.yaml 
+
+        <a href="#"> Go to files </a>
+
+2. Get storage class
+
+    ```
+    kubectl get storageclass
+    ```
+
+3. Deployment 
+
+
+    ```
+    mkdir rabbitFiles
+    cd rabbitFiles
+    kubectl apply -n rabbits -f rabbit-rbac.yaml
+    kubectl apply -n rabbits -f rabbit-configmap.yaml
+    kubectl apply -n rabbits -f rabbit-secret.yaml
+    kubectl apply -n rabbits -f rabbit-statefulset.yaml
+    ```
+
+4. Access to the UI
+    ```
+    kubectl -n rabbits port-forward rabbitmq-0 8080:15672
+    ```
+
+    Default Username and password:
+    Username: ```guest```
+    Password: ```guest```
+
+    <i>Remember that you can create new users in the management dashoard. </i>
