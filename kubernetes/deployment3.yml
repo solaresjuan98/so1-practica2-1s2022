@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: consumer
+  namespace: practica2-201800496 
+  labels:
+    app: consumer
+spec:
+  selector:
+    matchLabels:
+      app: consumer
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: consumer
+    spec:
+      hostname: grpc-pod-host
+      containers:
+        - name: consumer
+          image: solaresjuan98/rabbit_sus_v2
+          env:
+          - name: HOST
+            value: rabbitmq.rabbits

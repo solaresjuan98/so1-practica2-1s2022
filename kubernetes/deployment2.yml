@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: rabbitmq
+  labels:
+    app: cluster-2
+spec:
+  selector:
+    matchLabels:
+      app: cluster-2
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: cluster-2
+    spec:
+      containers:
+        - name: rabbit
+          image: rabbitmq:3-management
+          env:
+          
+          - name: HOST
+            value: grpc-pod-host
+
+        
