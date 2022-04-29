@@ -35,12 +35,36 @@
 * Golang
 * GRPC
 
+
+Run container in docker
+```
+sudo docker run -it  -p 5000:5000  -e HOST=<RABBIT_HOST> clientgrpc_go
+```
+
 ####  :white_check_mark: Client
 
+Run container in docker 
+```
+sudo docker run -it -e HOST=34.125.65.198 rabbit_sus_v2 
+```
 
 ##### Used technologies
 * NodeJS
 * GRPC
+
+Run container in docker
+```
+sudo docker run -it  -p 50051:50051  -e RABBIT_HOST=<RABBIT_HOST> servergrpc_node_v3
+```
+
+
+####  :white_check_mark: Rabbitmq consumer
+
+Run container in docker
+```
+sudo docker run rabbit_sus_v2
+```
+
 
 ####  :white_check_mark: Database
 
@@ -61,6 +85,30 @@ docker start <MONGODB_CONTAINER_ID>
 
 ####  :white_check_mark: Docker
 
+Login in dockerHub
+``` 
+docker login 
+```
+
+Build images
+``` 
+cd folder
+docker build -t <IMAGE_NAME> .
+```
+
+
+
+Tag images 
+```
+docker tag <image_id> <dockerHub_user>/<image_name>
+```
+
+Push images to registry
+```
+docker push <dockerHub_user>/<image_name>
+```
+
+Start 
 
 ####  :white_check_mark: Kubernetes
 
@@ -156,4 +204,36 @@ kubectl create ns rabbits
     Username: ```guest```
     Password: ```guest```
 
-    <i>Remember that you can create new users in the management dashoard. </i>
+    <i>Remember that you can create new users in the management dashboard. </i>
+
+
+#### Usage example
+
+<p>Send a post request to the following url ``` http://35.192.86.149:5000 ```, you can use a Traffic Generator or postman. 
+</p>
+
+Body request 
+
+```
+game_id: String
+players: String
+```
+
+
+
+<img src="img/postman.png">
+
+
+####  :white_check_mark: References
+
+<a href="https://github.com/marcel-dempers/docker-development-youtube-series/tree/master/messaging/rabbitmq/kubernetes"> Setting Rabbitmq with Kubernetes (Marcel Dempers Github Repository)</a>
+
+<a href="https://hub.docker.com/repository/docker/solaresjuan98/servergrpc_node_v3">Nodejs server</a>
+
+<a href="https://hub.docker.com/repository/docker/solaresjuan98/clientgrpc_go">Golang client </a>
+
+
+<a href="https://hub.docker.com/repository/docker/solaresjuan98/rabbit_sus_v2">
+Rabbit Subcriber with Golang
+</a>
+
