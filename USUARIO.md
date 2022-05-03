@@ -60,4 +60,10 @@ you will have the following output
 
 <img src="img/locust3.png">
 
-6. The traffic will be generated and stored in the database.
+6. You will see the dashboard with the results and the charts.  
+
+<img src="img/locust4.png">
+
+<img src="img/locust5.png">
+
+7. The traffic will be enqueued in Rabbitmq and stored in the database.
