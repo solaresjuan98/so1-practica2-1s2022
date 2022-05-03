@@ -104,7 +104,7 @@ func Inicio(c *fiber.Ctx) error {
 
 	return c.Status(http.StatusOK).JSON(Bienvenidos{
 		//Status: http.StatusOK,
-		Bienvenido: "se agrego perro",
+		Bienvenido: "se agrego",
 	})
 
 }
@@ -113,7 +113,7 @@ func Bienvenido(c *fiber.Ctx) error {
 
 	return c.Status(http.StatusOK).JSON(Bienvenidos{
 		//Status: http.StatusOK,
-		Bienvenido: "chinga tu madre",
+		Bienvenido: "Bienvenido a la aplicacion",
 	})
 
 }
